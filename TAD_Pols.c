@@ -14,8 +14,8 @@
 #define POL1 PORTBbits.RB1
 
 static unsigned char state = 0;
-static bit pressed0 = 0;
-static bit pressed1 = 0;
+static unsigned char pressed0 = 0;
+static unsigned char pressed1 = 0;
 
 void POL_Init() {
     TRISBbits.TRISB0 = 1;
@@ -45,7 +45,7 @@ void POL_Motor() {
     }
 }
 
-bit POL_IsPressed0() {
+unsigned char POL_IsPressed0() {
     if (pressed0) {
         pressed0 = 0;
         return 1;
@@ -53,7 +53,7 @@ bit POL_IsPressed0() {
     return 0;
 }
 
-bit POL_IsPressed1() {
+unsigned char POL_IsPressed1() {
     if (pressed1) {
         pressed1 = 0;
         return 1;
