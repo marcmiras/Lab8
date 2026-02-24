@@ -10,6 +10,7 @@
 #include "pic18f4321.h"
 #include "TAD_ASIO.h"
 #include "TAD_led.h"
+#include "TAD_Pols.h"
 
 #pragma config OSC = HSPLL
 #pragma config PBADEN = DIG
@@ -29,9 +30,11 @@ void main(void) {
     
     LED_Init();
     ASIO_Init();
+    POL_Init();
     
     while(1) {
         ASIO_Motor();
+        POL_Motor();
     }
         
     return;
